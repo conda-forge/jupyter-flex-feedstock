@@ -1,5 +1,5 @@
 {% set name = "jupyter-flex" %}
-{% set version = "0.6.2" %}
+{% set version = "0.6.3" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jupyter-flex-{{ version }}.tar.gz
-  sha256: 30018c3c7373541f051808541acc6a825317ec98fe59f4dadd88c96a25379a94
+  sha256: cdd048ccab85942be49c23cec4c8849103788f81692f622b335ce0c18e5f6fa6
 
 build:
   number: 0
@@ -17,19 +17,17 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.7
     - pip
     - setuptools_scm
   run:
-    - python >=3.6
-    - nbclient >=0.4.0
-    - nbconvert <6,>=5.5.0
-    - voila <0.2,>=0.1.21
+    - python >=3.7
+    - nbconvert >=6.0.7,<7
+    - voila >=0.2.0,<0.3
 
 test:
   imports:
     - jupyter_flex
-    - jupyter_flex.tests
   commands:
     - pip check
   requires:
