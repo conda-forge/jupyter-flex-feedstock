@@ -1,5 +1,5 @@
 {% set name = "jupyter-flex" %}
-{% set version = "0.7.2" %}
+{% set version = "0.7.3" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jupyter-flex-{{ version }}.tar.gz
-  sha256: 2fa2c2f9b2e0d462ce4ad97cbb1057a68a617ecd345a44a0ffc86bb1febed343
+  sha256: 0770860c7a07bb925183fa604c3f635628035098b4fe662710bfa07022a656ae
 
 build:
   number: 0
