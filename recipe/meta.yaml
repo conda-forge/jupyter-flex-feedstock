@@ -1,5 +1,5 @@
 {% set name = "jupyter-flex" %}
-{% set version = "0.8.0" %}
+{% set version = "0.9.0" %}
 
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jupyter-flex-{{ version }}.tar.gz
-  sha256: cfd5001eb8c473924f9f8364cd5e7522ef6b61043aee2bcec80394faf1860d69
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 05ead2d8c4b7ca44dcde0ca4a74d74c49ccbe3081ad7a455f5d3816b077c53cd
 
 build:
   number: 0
