@@ -1,5 +1,5 @@
 {% set name = "jupyter-flex" %}
-{% set version = "0.8.0" %}
+{% set version = "0.9.1" %}
 
 
 package:
@@ -7,28 +7,29 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jupyter-flex-{{ version }}.tar.gz
-  sha256: cfd5001eb8c473924f9f8364cd5e7522ef6b61043aee2bcec80394faf1860d69
+  url: https://github.com/danielfrg/jupyter-flex/archive/refs/tags/{{ version }}.tar.gz
+  sha256: 951868859253c5ea246434e1acca71e58624cb220254013397fa105399250979
 
 build:
   number: 0
   noarch: python
   script:
-    - rm -rf pyproject.toml
+    - cd python
     - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.8
+    - hatchling
     - pip
-    - setuptools_scm
   run:
-    - python >=3.7
-    - illusionist >=0.3.0,<0.4.0
-    - ipykernel >=6.4.1,<7
-    - jinja2 >=3.0.1,<4
-    - nbconvert >=6.2.0,<7
-    - voila >=0.2.0,<0.3
+    - python >=3.8
+    - ipykernel >=6.21.3
+    - jinja2 >=3.1.2
+    - markupsafe >=2.0.1
+    - nbconvert >=7.2.9
+    - voila >=0.4.0
+
 
 test:
   imports:
