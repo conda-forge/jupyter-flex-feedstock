@@ -7,13 +7,15 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 476ac14f5aab45764664976ccf6b09611bd00d97c3c65552f8f03017a876f7cb
+  url: https://github.com/danielfrg/jupyter-flex/archive/refs/tags/{{ version }}.tar.gz
+  sha256: 951868859253c5ea246434e1acca71e58624cb220254013397fa105399250979
 
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script:
+    - cd python
+    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
