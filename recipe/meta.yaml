@@ -11,19 +11,19 @@ source:
   sha256: 951868859253c5ea246434e1acca71e58624cb220254013397fa105399250979
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script:
     - cd python
-    - {{ PYTHON }} -m pip install . -vv
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - hatchling
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - ipykernel >=6.21.3
     - jinja2 >=3.1.2
     - markupsafe >=2.0.1
@@ -38,6 +38,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/danielfrg/jupyter-flex
